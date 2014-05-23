@@ -1,0 +1,16 @@
+<% game = Game.new %>
+<table>
+  <% 100.times do |x| %>
+  <tr class= 'row_<%= x.to_s %>'>
+    <% 150.times do |y| %>
+      <% @cell = Cell.new(x, y) %>
+      <td class= 'col_<%= y.to_s %> clickable'></td>
+    <% end %>
+  </tr>
+  <% end %>
+</table>
+
+<div class='wrapper'>
+<button>start life</button>
+</div>
+

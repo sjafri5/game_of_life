@@ -1,0 +1,36 @@
+/*tr {
+  border: 2px dotted blue;
+  width: 5px;
+  height: 5px;
+}*/
+table {
+  background-color: white;
+  margin: auto;
+  border-collapse:collapse;
+}
+tr {
+  margin: 0px;
+  padding: 0px;
+}
+td {
+  border: 1px solid black;
+  width: 5px;
+  height: 5px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.alive {
+  background-color: black;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+.wrapper button {
+  margin-top: 15px;
+  position: absolute:
+  top: 50%;
+}
+
