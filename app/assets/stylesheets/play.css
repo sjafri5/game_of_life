@@ -14,8 +14,8 @@ tr {
 }
 td {
   border: 1px solid black;
-  width: 5px;
-  height: 5px;
+  width: 20px;
+  height: 20px;
   margin: 0px;
   padding: 0px;
 }
@@ -28,7 +28,7 @@ td {
     text-align: center;
 }
 
-.wrapper button {
+#start_life_btn {
   margin-top: 15px;
   position: absolute:
   top: 50%;

@@ -1,16 +1,18 @@
-<% game = Game.new %>
 <table>
-  <% 100.times do |x| %>
-  <tr class= 'row_<%= x.to_s %>'>
-    <% 150.times do |y| %>
-      <% @cell = Cell.new(x, y) %>
-      <td class= 'col_<%= y.to_s %> clickable'></td>
+  <% 4.times do |y| %>
+  <tr class= 'row_<%= y.to_s %>'>
+    <% 4.times do |x| %>
+      <td class= 'col_<%= x.to_s %> clickable'>
+        <input class = 'x' type='hidden' value= '<%=x%>'>
+        <input class = 'y' type='hidden' value= '<%=y%>'>
+      </td>
+
     <% end %>
   </tr>
   <% end %>
 </table>
 
 <div class='wrapper'>
-<button>start life</button>
+<button id="start_life_btn">start life</button>
 </div>
 
