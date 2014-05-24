@@ -1,7 +1,9 @@
-<table>
-  <% 4.times do |y| %>
+<table id='play_grid'>
+  <input class = 'row_val' type='hidden' value= '<%=@row%>'>
+  <input class = 'col_val' type='hidden' value= '<%=@col%>'>
+  <% @row.times do |y| %>
   <tr class= 'row_<%= y.to_s %>'>
-    <% 4.times do |x| %>
+    <% @col.times do |x| %>
       <td class= 'col_<%= x.to_s %> clickable'>
         <input class = 'x' type='hidden' value= '<%=x%>'>
         <input class = 'y' type='hidden' value= '<%=y%>'>
@@ -15,4 +17,5 @@
 <div class='wrapper'>
 <button id="start_life_btn">start life</button>
 </div>
+
 

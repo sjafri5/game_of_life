@@ -4,6 +4,8 @@ class StaticPagesController < ApplicationController
   end
 
   def play
+  	@row = 10
+  	@col = 15
   end
 end
 

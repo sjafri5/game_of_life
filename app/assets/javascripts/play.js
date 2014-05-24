@@ -1,32 +1,36 @@
 $(document).ready( function(){
   console.log('asfsaf')
+  var gameBeingPlayed = true
+  row_value = $('.row_val').val();
+  col_value = $('.col_val').val();
 
   $('.clickable').on('click', function(){
       $(this).toggleClass('alive')
+      $(this).removeClass('will_live')
   });
 
   $('#start_life_btn').on('click', function(e){
-    e.preventDefault();
-    var gameBeingPlayed = true
-    assignNextRoundstatus();
+      e.preventDefault();
+    
+    
 
-    while (gameBeingPlayed) {
-      for (var r = 0; r < 4; r++) {
-        for (var c = 0; c < 4; c++)
-          var $cell = $('.row_' + r + ' .col_' + c)
-          if ($cell.hasClass('will_live')){
+   
+      assignNextRoundstatus();
+      changeLivesStatus();
 
-          }
-          else{}
-      }
-    }
+    
 
   })
+
+  $('#end_life_btn').on('click', function(){
+        gameBeingPlayed = false
+    })
+
 })
 
 var assignNextRoundstatus = function(){
-  for (var r = 0; r < 4; r++) {
-    for (var c = 0; c < 4; c++) {
+  for (var r = 0; r < row_value ; r++) {
+    for (var c = 0; c < col_value; c++) {
       var $cell = $('.row_' + r + ' .col_' + c)
       AssignSurvivorClass(findAdjacentCellCoords(r, c), $cell);
     }}
@@ -63,7 +67,6 @@ var countNeighbors = function(arr_of_crds){
   var count = 0
   for (ind in arr_of_crds) {
     var coord = arr_of_crds[ind]
-    console.log(coord)
     var $selector = $('.row_' + coord[1] + ' .col_' + coord[0])
     if ($selector.hasClass('alive')) {
       count += 1
@@ -83,7 +86,7 @@ var findAdjacentCellCoords = function(r, c){
 var find_x_adders = function(c){
   if (c == 0)
     {return [0, 1]}
-  else if (c == 3)
+  else if (c == (col_value - 1))
     {return [-1, 0]}
   else
     {return [-1, 0, 1]}
@@ -93,7 +96,7 @@ var find_x_adders = function(c){
 var find_y_adders = function(r){
   if (r == 0)
     {return [0, 1]}
-  else if (r == 3)
+  else if (r == (row_value - 1))
     {return [-1, 0]}
   else
     {return [-1, 0, 1]}
@@ -110,4 +113,20 @@ var find_coordinates = function(arr_x, arr_y, r, c){
   }
   return arr_of_coord
 }
+
+var changeLivesStatus = function(){
+  for (var r = 0; r < row_value; r++) {
+        for (var c = 0; c < col_value; c++) {
+          var $cell = $('.row_' + r + ' .col_' + c)
+
+          if ($cell.hasClass('will_live')){
+            $cell.addClass('alive')
+          }
+          else{
+            $cell.removeClass('alive')
+          }
+        }
+      }
+}
+
 
