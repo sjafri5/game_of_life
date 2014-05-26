@@ -1,6 +1,7 @@
 $(document).ready( function(){
   console.log('asfsaf')
   var gameBeingPlayed = true
+  var iterations = 0
   row_value = $('.row_val').val();
   col_value = $('.col_val').val();
 
@@ -12,11 +13,10 @@ $(document).ready( function(){
   $('#start_life_btn').on('click', function(e){
       e.preventDefault();
     
-    
-
-   
       assignNextRoundstatus();
       changeLivesStatus();
+      iterations += 1
+      changeGeneration(iterations)
 
     
 
@@ -27,6 +27,11 @@ $(document).ready( function(){
     })
 
 })
+
+
+var changeGeneration = function(iter) {
+  $('#gen_tag').html("Generations: " + iter)
+}
 
 var assignNextRoundstatus = function(){
   for (var r = 0; r < row_value ; r++) {
