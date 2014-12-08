@@ -1,24 +1,37 @@
-<table id='play_grid'>
-  <input class = 'row_val' type='hidden' value= '<%=@row%>'>
-  <input class = 'col_val' type='hidden' value= '<%=@col%>'>
-  <% @row.times do |y| %>
-  <tr class= 'row_<%= y.to_s %>'>
-    <% @col.times do |x| %>
-      <td class= 'col_<%= x.to_s %> clickable'>
-        <input class = 'x' type='hidden' value= '<%=x%>'>
-        <input class = 'y' type='hidden' value= '<%=y%>'>
-      </td>
+<div class='grid-div'>
+  <table id='play_grid'>
+    <input class = 'row_val' type='hidden' value= '<%=@row%>'>
+    <input class = 'col_val' type='hidden' value= '<%=@col%>'>
+    <% @row.times do |y| %>
+    <tr class= 'row_<%= y.to_s %>'>
+      <% @col.times do |x| %>
+        <td class= 'col_<%= x.to_s %> clickable'>
+          <input class = 'x' type='hidden' value= '<%=x%>'>
+          <input class = 'y' type='hidden' value= '<%=y%>'>
+        </td>
 
+      <% end %>
+    </tr>
     <% end %>
-  </tr>
-  <% end %>
-</table>
+  </table>
+  <div class='row'>
+    <div class='generation-and-button'>
+      <h3 id='gen_tag'>Generations: 0</h3>
+      <button id="start_life_btn">Begin Time</button>
+    </div>
+    <div class='rules'>
 
-<div class='wrapper'>
-<button id="start_life_btn">Next Generation</button>
-</div>
-<div class='wrapper'>
-  <h3 id='gen_tag'>Generations: 0</h3>
+        <h2>Rules Of Life</h2>
+        <ul class='rules-list'>
+          <li>A cell is 'living' if it is colored in. A cell is 'dead' if it is blank. You can bring to life cells by clicking in them.</li>
+          <li>Any live cell with fewer than two live neighbours dies, as if caused by under-population.</li>
+          <li>Any live cell with two or three live neighbours lives on to the next generation.</li>
+          <li>Any live cell with more than three live neighbours dies, as if by overcrowding.</li>
+          <li>Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.</li>
+        </ul>
+        <p>More info about Conway's game can be found <a href="http://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">here</a>. The app was created by <a href="http://razajafri.info">Raza Jafri</a></p>
+      </div>
+  </div>
 </div>
 
 
