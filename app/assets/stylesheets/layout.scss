@@ -3,30 +3,51 @@
 .wrapper {
   background-image: url('congruent_pentagon.png');
   @include grid-row($behavior: nest);
-  position: relative;
+  position:relative;
 }
 
 .title-div {
+  position: absolute;
+  height: 200px;
+  margin-top: 20%;
+  text-align: center;
+}
+
+.child {
+}
+
+/*.title-div {
   @include grid-column(
-    $columns:3,
+    $columns:12,
     $last-column:false,
     $center:true
   );
+  border: 2px solid black;
+  position: relative !important;
+  text-align:center;
+
+  .child {
+    @include grid-column(
+      $columns:4,
+      $last-column:false,
+      $center:true
+    );
+
+    border: 2px solid black;
+    height: 150px;
+    position: absolute !important;
+    top: 50%;
+    }
+
+
+
 }
 
+*/
 .home_page {
   font-family: 'Varela Round', sans-serif;
 }
 
-
-.child {
-  height: 150px;
-  position: absolute;
-  top: 50%;
-  /*height: 100px;*/
-  margin-top: -50px;  
-/*  account for padding and border if not using box-sizing: border-box; 
-*/}
 
 
 
