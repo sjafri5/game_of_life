@@ -23,8 +23,9 @@ body {
 
 
 
+
 h2.home_page a {
-  text-decoration: none;
+  text-decoration: underline;
   color: black;
 }
 

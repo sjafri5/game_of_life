@@ -13,10 +13,15 @@ $(document).ready( function(){
   $('#start_life_btn').on('click', function(e){
       e.preventDefault();
     
-      assignNextRoundstatus();
-      changeLivesStatus();
-      iterations += 1
-      changeGeneration(iterations)
+     
+
+      test = function() {
+         assignNextRoundstatus();
+        changeLivesStatus();
+        iterations += 1
+        changeGeneration(iterations)
+      }
+      var refreshId = setInterval("test()", 1000);
 
     
 
