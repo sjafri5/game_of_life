@@ -2,7 +2,6 @@ body {
   background-image: url('congruent_pentagon.png');
 }
 
-
 .home_page {
   font-family: 'Varela Round', sans-serif;
 }
@@ -25,7 +24,6 @@ body {
 
 
 h2.home_page a {
-/*  border: 2px solid blue;*/
   text-decoration: none;
   color: black;
 }
