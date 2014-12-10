@@ -16,16 +16,33 @@ $(document).ready( function(){
      
 
       test = function() {
-         assignNextRoundstatus();
+        assignNextRoundstatus();
         changeLivesStatus();
         iterations += 1
         changeGeneration(iterations)
       }
-      var refreshId = setInterval("test()", 600);
+      interval = setInterval("test()", 600);
 
-    
-
+  
   })
+
+  $('#end_life_btn').on('click', function(e){
+      e.preventDefault();
+    
+      clearInterval(interval);
+
+     //  var test = function() {
+     //     assignNextRoundstatus();
+     //    changeLivesStatus();
+     //    iterations += 1
+     //    changeGeneration(iterations)
+     //  }
+     // interval = setInterval("test()", 600);
+
+  
+  })
+
+  
 
   $('#end_life_btn').on('click', function(){
         gameBeingPlayed = false
