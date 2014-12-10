@@ -21,7 +21,7 @@ $(document).ready( function(){
         iterations += 1
         changeGeneration(iterations)
       }
-      var refreshId = setInterval("test()", 1000);
+      var refreshId = setInterval("test()", 600);
 
     
 
